@@ -5,6 +5,9 @@ import lombok.extern.log4j.Log4j2;
 @Log4j2
 public class AssociationMainTest {
 
+    //musteri -> 1 den fazla olsun
+    //super -> 1 den fazla olsun
+
     public static void main(String[] args) {
         Musteri musteri=Musteri.builder().musteriAdi("Furkan").musteriSehri("İstanbul").build();
 
