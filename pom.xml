@@ -2,22 +2,39 @@
 <project xmlns="http://maven.apache.org/POM/4.0.0" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
          xsi:schemaLocation="http://maven.apache.org/POM/4.0.0 https://maven.apache.org/xsd/maven-4.0.0.xsd">
     <modelVersion>4.0.0</modelVersion>
+
+    <!--D.I veya plugin için gereklidir.-->
     <parent>
         <groupId>org.springframework.boot</groupId>
         <artifactId>spring-boot-starter-parent</artifactId>
         <version>2.6.3</version>
         <relativePath/> <!-- lookup parent from repository -->
     </parent>
-    <groupId>com.innova</groupId>
+
+    <groupId>com.hamitmizrak</groupId>
     <artifactId>InnovaMVC</artifactId>
     <version>0.0.1-SNAPSHOT</version>
     <name>InnovaMVC</name>
     <description>InnovaMVC</description>
+
     <properties>
         <java.version>11</java.version>
     </properties>
+
+
     <dependencies>
-        <!-- spring MVC-->
+        <!-- JSP icin -->
+        <dependency>
+            <groupId>org.apache.tomcat.embed</groupId>
+            <artifactId>tomcat-embed-jasper</artifactId>
+        </dependency>
+
+        <dependency>
+            <groupId>javax.servlet</groupId>
+            <artifactId>jstl</artifactId>
+        </dependency>
+
+        <!--  spring MVC-->
         <dependency>
             <groupId>org.springframework.boot</groupId>
             <artifactId>spring-boot-starter-web</artifactId>
@@ -31,12 +48,11 @@
             <optional>true</optional>
         </dependency>
 
-        <!-- validation-->
+        <!--  validation-->
         <dependency>
             <groupId>org.springframework.boot</groupId>
             <artifactId>spring-boot-starter-validation</artifactId>
         </dependency>
-
 
         <!--mysql-->
         <dependency>
@@ -46,11 +62,14 @@
         </dependency>
 
         <!-- tools -->
+        <!--proje durum bilgisi icin-->
         <dependency>
             <groupId>org.springframework.boot</groupId>
             <artifactId>spring-boot-starter-actuator</artifactId>
         </dependency>
 
+        <!-- projeyi restart yapmadan acmak-->
+        <!--sadece gelistirme ortamında kullanmalısın bunun icin asagıda optional true yazılmış -->
         <dependency>
             <groupId>org.springframework.boot</groupId>
             <artifactId>spring-boot-devtools</artifactId>
@@ -64,12 +83,11 @@
             <optional>true</optional>
         </dependency>
 
-
         <!-- template-->
-        <dependency>
-            <groupId>org.springframework.boot</groupId>
-            <artifactId>spring-boot-starter-thymeleaf</artifactId>
-        </dependency>
+        <!-- <dependency>
+             <groupId>org.springframework.boot</groupId>
+             <artifactId>spring-boot-starter-thymeleaf</artifactId>
+         </dependency>-->
 
         <dependency>
             <groupId>org.springframework.boot</groupId>
@@ -77,7 +95,6 @@
             <scope>test</scope>
         </dependency>
     </dependencies>
-
 
     <build>
         <plugins>
@@ -95,5 +112,4 @@
             </plugin>
         </plugins>
     </build>
-
 </project>

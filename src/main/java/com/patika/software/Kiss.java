@@ -8,32 +8,30 @@ import java.io.BufferedWriter;
 import java.io.FileReader;
 import java.io.FileWriter;
 
+//Keep It Simple Stupid : Olabildiğince herşeyi en basit yöntemle çöz
 @Log4j2
-
-//Keep It Simple Stupid : Olabildiğince her şeyi en basit yöntemle çöz.
 public class Kiss {
-    private static String path = "C:\\Users\\MSI\\Desktop\\INNOVA BOOTCAMP\\Patika.txt";
+    private static String path = "C:\\patika\\patika.txt";
 
-    //File Writer ?? mutlaka bil diyo
+    //File Writer
     public void utilWriter() {
-
         //try with resources
         try (BufferedWriter bufferedWriter = new BufferedWriter(new FileWriter(path, true))) {
-            String value = JOptionPane.showInputDialog("Lütfen bir şeyler giriniz.");
+            String value = JOptionPane.showInputDialog("Lütfen birşeyler giriniz");
             bufferedWriter.write(value);
             bufferedWriter.flush();
         } catch (Exception e) {
             e.printStackTrace();
         }
-
     }
-    //File Reader ?? Mutlaka bil diyo
 
+    //File Reader
     public void utilReader() {
+        //try with resources
         try (BufferedReader bufferedReader = new BufferedReader(new FileReader(path))) {
-            String numborRow = "", sumRow = "";
-            while ((numborRow = bufferedReader.readLine()) != null) {
-                sumRow += numborRow;
+            String numberRow = "", sumRow = "";
+            while ((numberRow = bufferedReader.readLine()) != null) {
+                sumRow += numberRow;
             }
             log.info(sumRow);
         } catch (Exception e) {
@@ -44,8 +42,10 @@ public class Kiss {
 
     public static void main(String[] args) {
         Kiss kiss = new Kiss();
-        kiss.utilWriter();
+        //kiss.utilWriter();
+        kiss.utilReader();
     }
+
 
 
 }

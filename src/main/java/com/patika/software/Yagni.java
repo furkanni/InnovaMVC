@@ -1,4 +1,5 @@
 package com.patika.software;
-// Yagni: Gelecekte sırf kullanırım diye metot oluşturmayalım.
+//YAgni: Gelecekte sırf kullanırı diye metot oluşturmayalım
+//Yagni: You arent gonna need it
 public class Yagni {
 }
